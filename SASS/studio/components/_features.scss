@@ -1,0 +1,47 @@
+.features{
+  width: 1200px;
+  margin: 0 auto;
+}
+.perevagy{
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.features-icons-all{
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+}
+.features-list-icons:nth-child(n){
+  width: 270px;
+  border-radius: 4px;
+background: #F5F4FA;
+}
+.features-icons{
+  width: 70px;
+  height: 70px;
+  margin: 25px 100px;
+}
+.features-list {
+  display: flex;
+  justify-content: space-between;
+}
+.features-list-item{
+  width: 270px;
+}
+.features-subtitle {
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #212121;
+}
+.features-paragraf {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: #757575;
+}
