@@ -15,7 +15,11 @@ body {
   font-style: normal;
 }
 
-h1, h3, p, h2, ul {
+h1,
+h3,
+p,
+h2,
+ul {
   margin: 0;
   padding: 0;
 }
@@ -27,7 +31,11 @@ li {
 .container {
   max-width: 1600px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
 }
 
 .header {
@@ -143,66 +151,6 @@ li {
   transform-origin: left;
 }
 
-.regular-customers {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.customers {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 215px;
-  width: 1200px;
-}
-
-.logo {
-  width: 106px;
-  height: 60px;
-}
-
-.customers-list-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 170px;
-  height: 92px;
-  border-radius: 4px;
-  border: 1px solid #AFB1B8;
-}
-
-.customers-list-item:hover .logo {
-  fill: #2196F3;
-  transition: fill 750ms ease-in;
-}
-
-.customers-list-item:hover {
-  border: 1px solid #2196F3;
-  transition: border 750ms ease-in;
-}
-
-.customers-list-item:focus .logo {
-  fill: #2196F3;
-  transition: fill 750ms ease-in;
-}
-
-.customers-list-item:focus {
-  border: 1px solid #2196F3;
-  transition: border 750ms ease-in;
-}
-
-.customers-title {
-  color: #212121;
-  text-align: center;
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 50px;
-  letter-spacing: 1.08px;
-}
-
-.logo {
-  fill: rgb(175, 177, 184);
-}
-
 .hero {
   width: 1600px;
   padding-top: 200px;
@@ -242,62 +190,6 @@ li {
   text-align: center;
   letter-spacing: 0.06em;
   color: #ffffff;
-}
-
-.features {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-.perevagy {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.features-icons-all {
-  display: flex;
-  justify-content: space-between;
-  width: 1200px;
-}
-
-.features-list-icons:nth-child(n) {
-  width: 270px;
-  border-radius: 4px;
-  background: #F5F4FA;
-}
-
-.features-icons {
-  width: 70px;
-  height: 70px;
-  margin: 25px 100px;
-}
-
-.features-list {
-  display: flex;
-  justify-content: space-between;
-}
-
-.features-list-item {
-  width: 270px;
-}
-
-.features-subtitle {
-  margin-top: 30px;
-  font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 10px;
-  line-height: 1.15;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #212121;
-}
-
-.features-paragraf {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.7;
-  letter-spacing: 0.03em;
-  color: #757575;
 }
 
 .backdrop {
@@ -470,6 +362,62 @@ textarea {
 
 .modal-href {
   color: #2196F3;
+}
+
+.features {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.perevagy {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.features-icons-all {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+}
+
+.features-list-icons:nth-child(n) {
+  width: 270px;
+  border-radius: 4px;
+  background: #F5F4FA;
+}
+
+.features-icons {
+  width: 70px;
+  height: 70px;
+  margin: 25px 100px;
+}
+
+.features-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.features-list-item {
+  width: 270px;
+}
+
+.features-subtitle {
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #212121;
+}
+
+.features-paragraf {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: #757575;
 }
 
 .works-i {
@@ -648,6 +596,66 @@ textarea {
   border-radius: 50%;
   background-color: #2196F3;
   transition: background-color 0.5s ease-out;
+}
+
+.regular-customers {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.customers {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 215px;
+  width: 1200px;
+}
+
+.logo {
+  width: 106px;
+  height: 60px;
+}
+
+.customers-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  border-radius: 4px;
+  border: 1px solid #AFB1B8;
+}
+
+.customers-list-item:hover .logo {
+  fill: #2196F3;
+  transition: fill 750ms ease-in;
+}
+
+.customers-list-item:hover {
+  border: 1px solid #2196F3;
+  transition: border 750ms ease-in;
+}
+
+.customers-list-item:focus .logo {
+  fill: #2196F3;
+  transition: fill 750ms ease-in;
+}
+
+.customers-list-item:focus {
+  border: 1px solid #2196F3;
+  transition: border 750ms ease-in;
+}
+
+.customers-title {
+  color: #212121;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  letter-spacing: 1.08px;
+}
+
+.logo {
+  fill: rgb(175, 177, 184);
 }
 
 .footer {
