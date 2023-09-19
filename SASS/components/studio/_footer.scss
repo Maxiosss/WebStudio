@@ -1,74 +1,82 @@
 .footer{
   width: 1600px;
   height: 252px;
-  background-color: #2f303a;
+  background-color:  getColor('fourth-background');
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.logo {
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.2;
-  letter-spacing: 0.03em;
-  color: #ffffff;
-  text-decoration: none;
-}
-.address-footer{
+.footer-wrapper {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  &__left{
   display: flex;
   flex-direction: column;
   width: 231px;
 }
-.street {
+& h2{
+  color:  getColor('color');
+font-size: 14px;
+font-weight: 700;
+letter-spacing: 0.42px;
+margin-bottom: 20px;
+text-transform: uppercase;
+}
+&__left a:hover {
+  color:  getColor('hover');
+    transition: color 500ms ease-out;
+}
+&__left a:focus{
+  color: getColor('hover');
+  transition: color 500ms ease-out;
+}
+& a:focus{
+  color: getColor('hover');
+    transition: color 500ms ease-out;
+}
+&__street {
   margin-top: 20px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   margin-bottom: 9px;
-  color: #ffffff;
+  color: getColor('background');
 }
-.tel-item{
-  margin-top: 9px;
 }
-.footer-wrapper {
-  display: flex;
-  width: 1200px;
-  margin: 0 auto;
+.logo__link {
+  font-family: getFont('raleway'), sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  color: getColor('background');
+  text-decoration: none;
 }
-.contact-footer {
+.footer-contact-list {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.15;
   letter-spacing: 0.02em;
-}
-.contact-footer a {
+  & a {
   text-decoration: none;
-  color: #757575;
+  color:  getColor('border');
 }
-.address-footer a:hover {
-  color: #2196f3;
-    transition: color 500ms ease-out;
+&__item{
+  margin-top: 9px;
 }
-.address-footer a:focus{
-  color: #2196f3;
-  transition: color 500ms ease-out;
 }
-.footer-wrapper a:focus{
-  color: #2196f3;
-    transition: color 500ms ease-out;
+.join{
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  padding-top: 12px;
 }
-.link-footer{
-  width: 20px;
-  height: 20px;
-  fill: #ffffff;
-}
-.links-footer{
+.footer-links-list{
   display: flex;
   justify-content: space-between;
   width: 206px;
-}
-.link-li-footer{
+  &__item{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,74 +85,21 @@
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
 }
-.link-li-footer:hover{
+&__item:hover{
   border-radius: 50%;
-  background-color: #2196F3;
+  background-color: getColor('hover');
     transition: background-color 1s ease;
 }
-.link-li-footer:focus{
+&__item:focus{
   border-radius: 50%;
-  background-color: #2196F3;
+  background-color: getColor('hover');
     transition: background-color 1s ease;
 }
-.footer-wrapper h2{
-  color: #FFF;
-font-size: 14px;
-font-weight: 700;
-letter-spacing: 0.42px;
-margin-bottom: 20px;
-text-transform: uppercase;
+  &__svg{
+  width: 20px;
+  height: 20px;
+  fill: getColor('background');
 }
-.join{
-  display: flex;
-  flex-direction: column;
-  margin-left: 70px;
-  padding-top: 12px;
-}
-.telegram-icon{
-  width: 24px;
-  height: 24px;
-  fill: #ffffff;
-}
-.telegram-btn{
-  width: 200px;
-  height: 50px;
-  border-radius: 4px;
-background: #2196F3;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-border: none;
-color: #FFF;
-text-align: center;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: 30px; 
-letter-spacing: 0.96px;
-position: absolute;
-left: 370px;
-animation: back 5s linear 500ms infinite;
-}
-.footer-input{
-  width: 358px;
-  height: 50px;
-  border-radius: 4px;
-border: 1px solid rgba(255, 255, 255, 0.30);
-background: rgba(33, 150, 243, 0.00);
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-padding-left: 16px;
-outline: none;
-color: #FFF;
-cursor: pointer;
-margin-top: 20px;
-margin-right: 12px;
-}
-.footer-label{
-  color: #FFF;
-font-size: 14px;
-font-weight: 700;
-line-height: normal;
-letter-spacing: 0.42px;
-text-transform: uppercase;
 }
 .telegram{
   padding-top: 12px;
@@ -155,13 +110,64 @@ text-transform: uppercase;
   align-items: flex-end;
   position: relative;
   left: 93px;
+  &__input{
+  width: 358px;
+  height: 50px;
+  border-radius: 4px;
+border: 1px solid rgba(255, 255, 255, 0.3);
+background: rgba(33, 150, 243, 0.00);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+padding-left: 16px;
+outline: none;
+color: getColor('color');
+cursor: pointer;
+margin-top: 20px;
+margin-right: 12px;
+}
+&__label{
+  color: getColor('color');
+font-size: 14px;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.42px;
+text-transform: uppercase;
+}
+&__icon{
+  width: 24px;
+  height: 24px;
+  fill: getColor('background');
+}
+&__btn{
+  width: 200px;
+  height: 50px;
+  border-radius: 4px;
+background: getColor('hover');
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+border: none;
+color: getColor('color');
+text-align: center;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 30px; 
+letter-spacing: 0.96px;
+position: absolute;
+left: 370px;
+animation: back 10s linear 500ms infinite;
+}
 }
 @keyframes back{
   0%{
     background-color: red;
   }
+  25%{
+    background-color: green;
+  }
   50%{
     background-color: black;
+  }
+  75%{
+    background-color: purple;
   }
   100%{
     background-color: #2196F3;

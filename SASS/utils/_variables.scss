@@ -1,0 +1,23 @@
+$colors: (
+    'background': #ffffff,
+    'border': #AFB1B8,
+    'text': #212121,
+    'hover': #2196f3,
+    'border-secondary': rgba(175, 177, 184, 1),
+    'background-secondary': rgba(47, 48, 58, 0.80),
+    'color': #FFF,
+    'svg': #757575,
+    'third-background': #F5F4FA,
+    'border-modal': rgba(33, 33, 33, 0.20),
+    'fourth-background': #2F303A,
+);
+@function getColor($key) {
+  @return map-get($colors, $key);
+};
+$fonts:(
+    'basic': 'Roboto',
+    'raleway': 'Raleway',
+);
+@function getFont($key) {
+  @return map-get($fonts, $key);
+};

@@ -9,7 +9,7 @@
   overflow: hidden;
 }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: getFont('basic'), sans-serif;
   font-style: normal;
 }
 h1,
@@ -26,7 +26,7 @@ li{
 .container {
   max-width: 1600px;
   margin: 0 auto;
-  background-color: #ffffff;
+  background-color: getColor('background');
 }
 a{
   text-decoration: none;
