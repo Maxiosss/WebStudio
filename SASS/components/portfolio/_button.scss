@@ -1,30 +1,13 @@
 .buttons-list {
-  width: 575px;
-  margin: 94px 298px 34px 297px;
-  padding-right: 8px;
-font-weight: 500;
-font-size: 16px;
-line-height: 26px;
-text-align: center;
-letter-spacing: 0.03em;
-color:  getColor('text');
+@extend %buttons;
 & button:hover{
-  background-color:  getColor('hover');
-  color: getColor('background');
-  transition: background-color 1s ease;
-  cursor: pointer;
+@extend %buttons-hover;
 }
 & button:focus{
-  background-color:  getColor('hover');
-  color:  getColor('background');
-  transition: background-color 1s ease;
-  cursor: pointer;
+@extend %buttons-hover;
 }
 &__item {
-  border: none;
-  height: 38px;
-  border-radius: 4px;
-  background:  getColor('third-background');
+@extend %button;
 }
 &__item:nth-child(1){
 width: 73px;

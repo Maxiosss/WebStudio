@@ -2,19 +2,16 @@
   width: 1200px;
   height: 80px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  @extend %flex;
   align-items: center;
   &__left {
-    display: flex;
-    justify-content: space-between;
+    @extend %flex;
     align-items: center;
     width: 520px;
   }
   &__right {
-    display: flex;
+    @extend %flex;
     width: 333px;
-    justify-content: space-between;
     align-items: center;
   }
   & a:focus {
@@ -24,25 +21,17 @@
 }
 .logo-link {
   font-family: getFont('raleway'), sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.2;
-  letter-spacing: 0.03em;
+    @include fonts(700, 26px, 0.03em,);
   color:  getColor('text');
-  text-decoration: none;
   &__web {
     color:  getColor('hover');
     padding-top: 24px;
   }
 }
 .nav-list {
-  display: flex;
-  justify-content: space-between;
+  @extend %flex;
+  @include fonts(500, 14px, 0.02em);
   width: 281px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
   &__item {
     position: relative;
   }
@@ -72,11 +61,7 @@
   }
 }
 .header-wrapper__contact-link {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
-  text-decoration: none;
+  @include fonts(500, 14px, 0.02em);
   color:  getColor('svg');
 .contact__icon {
     margin-right: 10px;

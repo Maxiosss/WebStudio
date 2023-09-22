@@ -3,11 +3,12 @@
   margin-left: 215px;
   margin-bottom: 94px;
   &-list {
-  display: flex;
-  justify-content: space-between;
+  @extend %flex;
   position: relative;
 }
 &-list__item:nth-child(n)::after{
+  @extend %center;
+  @include fonts(700, 14px, 0.42px, $text-transform:uppercase);
   content: "";
   position: absolute;
   width: 370px;
@@ -15,15 +16,6 @@
   height: 70px;
   background:  getColor('background-secondary');
   color:  getColor('color');
-  display: flex;                                                                                                                                                                                                                                                                                                   
-  justify-content: center;
-align-items: center;
-text-align: center;
-font-size: 14px;
-font-weight: 700;
-line-height: normal;
-letter-spacing: 0.42px;
-text-transform: uppercase;
 }
 &-list__item:nth-child(1)::after{
   content: "Десктопні додатки";
@@ -39,19 +31,13 @@ text-transform: uppercase;
   height: 294px;
 }
 &-list__item > img{
+  @extend %object;
+  @extend %thumb;
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 }
 .our-skills {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  letter-spacing: 0.03em;
+    @include fonts(700, 36px, 0.03em);
   color:  getColor('text');
   margin-top: 0;
   margin-bottom: 50px;

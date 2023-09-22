@@ -10,17 +10,13 @@
   width: 1200px;
   margin: 0 auto;
   &__left{
-  display: flex;
-  flex-direction: column;
+  @extend %column;
   width: 231px;
 }
 & h2{
   color:  getColor('color');
-font-size: 14px;
-font-weight: 700;
-letter-spacing: 0.42px;
+  @include fonts(700, 14px, 0.42px, $text-transform:uppercase, $text-align:left);
 margin-bottom: 20px;
-text-transform: uppercase;
 }
 &__left a:hover {
   color:  getColor('hover');
@@ -35,29 +31,19 @@ text-transform: uppercase;
     transition: color 500ms ease-out;
 }
 &__street {
+    @include fonts($font-size:14px, $letter-spacing:0.03em, $line-height:1.71, $text-align:left);
   margin-top: 20px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
   margin-bottom: 9px;
   color: getColor('background');
 }
 }
 .logo__link {
   font-family: getFont('raleway'), sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.2;
-  letter-spacing: 0.03em;
+    @include fonts(700, 26px, 0.03em, $text-align:left);
   color: getColor('background');
-  text-decoration: none;
 }
 .footer-contact-list {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
+    @include fonts(500, 14px, 0.02em, $text-align:left);
   & a {
   text-decoration: none;
   color:  getColor('border');
@@ -67,19 +53,15 @@ text-transform: uppercase;
 }
 }
 .join{
-  display: flex;
-  flex-direction: column;
+  @extend %column;
   margin-left: 70px;
   padding-top: 12px;
 }
 .footer-links-list{
-  display: flex;
-  justify-content: space-between;
+  @extend %flex;
   width: 206px;
   &__item{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -125,12 +107,8 @@ margin-top: 20px;
 margin-right: 12px;
 }
 &__label{
+    @include fonts(700, 14px, 0.42px, $text-transform:uppercase, $text-align:left);
   color: getColor('color');
-font-size: 14px;
-font-weight: 700;
-line-height: normal;
-letter-spacing: 0.42px;
-text-transform: uppercase;
 }
 &__icon{
   width: 24px;
@@ -138,6 +116,7 @@ text-transform: uppercase;
   fill: getColor('background');
 }
 &__btn{
+    @include fonts(700, $letter-spacing:0.96px, $line-height:30px);
   width: 200px;
   height: 50px;
   border-radius: 4px;
@@ -145,12 +124,6 @@ background: getColor('hover');
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 border: none;
 color: getColor('color');
-text-align: center;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: 30px; 
-letter-spacing: 0.96px;
 position: absolute;
 left: 370px;
 animation: back 10s linear 500ms infinite;

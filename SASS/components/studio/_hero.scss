@@ -8,27 +8,18 @@
   background-repeat: no-repeat;
   background-size: cover;
   &__title {
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
-  text-align: center;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+    @include fonts(900, 44px, 0.06em, 1.36, $text-transform:uppercase);
   color:  getColor('background');
 }
 &__btn {
+  @include fonts(700, $letter-spacing:0.06em, $line-height:30px);
   width: 216px;
   height: 50px;
   margin: 0 auto;
   background-color: getColor('hover');
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 30px;
   display: block;
-  text-align: center;
-  letter-spacing: 0.06em;
   color:  getColor('background');
 }
 }

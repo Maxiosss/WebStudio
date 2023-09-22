@@ -1,35 +1,28 @@
 .customers{
-  padding-top: 94px;
-  padding-bottom: 94px;
+@extend %padding-94;
   &__title{
+    @include fonts(700, 36px);
   color: getColor('text');
-text-align: center;
-font-size: 36px;
-font-weight: 700;
 margin-bottom: 50px;
-letter-spacing: 1.08px;
 }
 }
 .customers-list{
-  display: flex;
-  justify-content: space-between;
+  @extend %flex;
   margin-left: 215px;
   width: 1200px;
   &__item{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    @include bordered (getColor('border'));
+  @extend %center;
   width: 170px;
   height: 92px;
   border-radius: 4px;
-border: 1px solid getColor('border');
 }
 &__item:hover &__svg{
   fill: getColor('hover');
   transition: fill 500ms ease-in;
 }
 &__item:hover{
-  border: 1px solid getColor('hover');
+  @include bordered(getColor('hover'));
     transition: border 500ms ease-in;
 }
 &__item:focus &__svg{
@@ -37,7 +30,7 @@ border: 1px solid getColor('border');
   transition: fill 500ms ease-in;
 }
 &__item:focus{
-  border: 1px solid getColor('hover');
+  @include bordered(getColor('hover'));
     transition: border 500ms ease-in;
 }
 &__svg{
