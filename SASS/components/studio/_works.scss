@@ -42,3 +42,8 @@
   margin-top: 0;
   margin-bottom: 50px;
 }
+@media screen and (max-width: 1200px){
+  .works{
+  display: none;
+}
+}

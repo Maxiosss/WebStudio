@@ -2,24 +2,91 @@
   width: 1600px;
   padding-top: 200px;
   padding-bottom: 200px;
-  background-color: getColor('fourth-background');
-  background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4)),url("/WebStudio/font/new_photo.jpg");
+  background-color: getColor("fourth-background");
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("/img/background/desktop.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  @media screen and (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (-o-min-device-pixel-ratio: 2/1),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("/img/background/desktop@2x.png");
+  }
+  @media screen and (max-width: 1199px) {
+    padding: 118px;
+    width: 768px;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("/img/background/tablet.png");
+    @media screen and (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (-o-min-device-pixel-ratio: 2/1),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url("/img/background/tablet@2x.png");
+    }
+  }
+  @media screen and (max-width: 767px) {
+    padding: 118px 0;
+    width: 480px;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("/img/background/phone.png");
+    @media screen and (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (-o-min-device-pixel-ratio: 2/1),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url("/img/background/phone@2x.png");
+    }
+  }
   &__title {
-    @include fonts(900, 44px, 0.06em, 1.36, $text-transform:uppercase);
-  color:  getColor('background');
-}
-&__btn {
-  @include fonts(700, $letter-spacing:0.06em, $line-height:30px);
-  width: 216px;
-  height: 50px;
-  margin: 0 auto;
-  background-color: getColor('hover');
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  display: block;
-  color:  getColor('background');
-}
+    @include fonts(900, 44px, 0.06em, 1.61, $text-transform: uppercase);
+    color: getColor("background");
+    @media screen and (max-width: 1199px) {
+      font-size: 26px;
+    }
+  }
+  &__btn {
+    @include fonts(700, $letter-spacing: 0.06em, $line-height: 30px);
+    width: 216px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: getColor("hover");
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    color: getColor("background");
+    @media screen and (max-width: 1199px) {
+      width: 200px;
+      height: 50px;
+    }
+  }
 }

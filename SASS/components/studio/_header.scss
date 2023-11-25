@@ -1,46 +1,93 @@
-.header-wrapper {
-  width: 1200px;
-  height: 80px;
-  margin: 0 auto;
-  @extend %flex;
-  align-items: center;
-  &__left {
-    @extend %flex;
-    align-items: center;
-    width: 520px;
+.header{
+  border-bottom: 1px solid #ECECEC;
+  padding: 24px 0;
+  @media screen and (max-width: 1199px){
+    padding: 21px 0;
   }
-  &__right {
+    @media screen and (max-width: 767px){
+    padding: 10px 0;
+  }
+}
+.header .inner-container{
+  @extend %flex;
+  align-items: center;  
+  &__contacts {
     @extend %flex;
     width: 333px;
     align-items: center;
+    margin-left: 74px;
+    @media screen and (max-width: 1199px) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 141px;
+      margin: 0;
+    }
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
   }
   & a:focus {
-    color:  getColor('hover');
+    color: getColor("hover");
     transition: color 250ms ease-in;
   }
 }
+.contact__icon{
+  margin-right: 10px;
+  fill: rgba(117, 117, 117, 1);
+    @media screen and (max-width: 1199px) {
+    margin-right: 8px;
+  }
+&--1 {
+  width: 16px;
+  height: 12px;
+  @media screen and (max-width: 1199px) {
+    width: 14px;
+    height: 10px;
+  }
+}
+&--2 {
+  width: 10px;
+  height: 16px;
+  @media screen and (max-width: 1199px) {
+    width: 10px;
+    height: 14px;
+  }
+}
+}
 .logo-link {
-  font-family: getFont('raleway'), sans-serif;
-    @include fonts(700, 26px, 0.03em,);
-  color:  getColor('text');
+  font-family: getFont("raleway"), sans-serif;
+  @include fonts(700, 26px, 0.03em, $text-align:left);
+  color: getColor("text");
+  margin: 0 88px 0 0;
+  @media screen and (max-width: 1199px) {
+    width: 134px;
+    margin: 0;
+    font-size: 24px;
+  }
   &__web {
-    color:  getColor('hover');
-    padding-top: 24px;
+    color: getColor("hover");
+    @media screen and (max-width: 1199px) {
+      width: 54px;
+    }
   }
 }
 .nav-list {
   @extend %flex;
-  @include fonts(500, 14px, 0.02em);
+  @include fonts(500, 14px, 0.02em, $text-align: left);
   width: 281px;
+    @media screen and (max-width: 767px) {
+    display: none;
+  }
   &__item {
     position: relative;
   }
   &__link {
     text-decoration: none;
-    color:  getColor('text');
+    color: getColor("text");
   }
   & a:hover {
-    color:  getColor('hover');
+    color: getColor("hover");
   }
   &__item::after {
     position: absolute;
@@ -50,7 +97,7 @@
     width: 100%;
     height: 4px;
     border-radius: 2px;
-    background-color:  getColor('hover');
+    background-color: getColor("hover");
     transform: scaleX(0);
     transition: transform 0.5s;
     transform-origin: right;
@@ -61,19 +108,46 @@
   }
 }
 .header-wrapper__contact-link {
-  @include fonts(500, 14px, 0.02em);
-  color:  getColor('svg');
-.contact__icon {
-    margin-right: 10px;
-    fill: rgba(117, 117, 117, 1);
+  @include fonts(500, 14px, 0.02em, $text-align: left);
+  color: getColor("svg");
+  @media screen and (max-width: 1199px) {
+    width: 145px;
+    letter-spacing: 0.24px;
+    font-size: 12px;
   }
-  &:hover .contact__icon,
-  &:focus .contact__icon {
-    fill:  getColor('hover');
+  &:hover .contact__icon--1,
+  &:focus .contact__icon--1 {
+    fill: getColor("hover");
+    transition: fill 250ms ease-in;
+  }
+  &:hover .contact__icon--2,
+  &:focus .contact__icon--2 {
+    fill: getColor("hover");
     transition: fill 250ms ease-in;
   }
   &:hover {
-    color:  getColor('hover');
+    color: getColor("hover");
     transition: color 250ms ease-in;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .header-wrapper__contact-link:nth-child(2) {
+    margin-top: 12px;
+  }
+}
+.btn-open__menu {
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: block;
+    border: none;
+    background-color: transparent;
+  }
+}
+.menu__svg-open {
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: block;
+    width: 40px;
+    height: 40px;
   }
 }

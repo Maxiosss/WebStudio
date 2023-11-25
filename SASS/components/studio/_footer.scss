@@ -1,148 +1,225 @@
-.footer{
-  width: 1600px;
-  height: 252px;
-  background-color:  getColor('fourth-background');
-  padding-top: 60px;
-  padding-bottom: 60px;
+.footer {
+  background-color: getColor("fourth-background");
+  padding: 60px 215px;
+  @media screen and (max-width: 1199px) {
+    max-width: 768px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 60px 0;
+  }
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+  }
 }
 .footer-wrapper {
   display: flex;
   width: 1200px;
   margin: 0 auto;
-  &__left{
-  @extend %column;
-  width: 231px;
-}
-& h2{
-  color:  getColor('color');
-  @include fonts(700, 14px, 0.42px, $text-transform:uppercase, $text-align:left);
-margin-bottom: 20px;
-}
-&__left a:hover {
-  color:  getColor('hover');
+  @media screen and (max-width: 1199px) {
+    width: 768px;
+    flex-wrap: wrap;
+  }
+  @media screen and (max-width: 767px) {
+    width: 480px;
+  }
+  &__left {
+    @extend %column;
+    width: 232px;
+  }
+  &__left a:hover {
+    color: getColor("hover");
     transition: color 500ms ease-out;
-}
-&__left a:focus{
-  color: getColor('hover');
-  transition: color 500ms ease-out;
-}
-& a:focus{
-  color: getColor('hover');
+  }
+  &__left a:focus {
+    color: getColor("hover");
     transition: color 500ms ease-out;
-}
-&__street {
-    @include fonts($font-size:14px, $letter-spacing:0.03em, $line-height:1.71, $text-align:left);
-  margin-top: 20px;
-  margin-bottom: 9px;
-  color: getColor('background');
-}
+  }
+  & a:focus {
+    color: getColor("hover");
+    transition: color 500ms ease-out;
+  }
+  &__street {
+    @include fonts(
+      $font-size: 14px,
+      $letter-spacing: 0.03em,
+      $line-height: 1.71,
+      $text-align: left
+    );
+    margin-top: 20px;
+    margin-bottom: 9px;
+    font-style: normal;
+    color: getColor("background");
+  }
 }
 .logo__link {
-  font-family: getFont('raleway'), sans-serif;
-    @include fonts(700, 26px, 0.03em, $text-align:left);
-  color: getColor('background');
+  font-family: getFont("raleway"), sans-serif;
+  @include fonts(700, 26px, 0.03em, $text-align: left);
+  color: getColor("background");
+  @media screen and (max-width: 1199px) {
+    width: 154px;
+    font-size: 24px;
+  }
 }
 .footer-contact-list {
-    @include fonts(500, 14px, 0.02em, $text-align:left);
-  & a {
-  text-decoration: none;
-  color:  getColor('border');
+  @include fonts(500, 14px, 0.02em, $text-align: left);
+  &__link {
+    text-decoration: none;
+    color: getColor("border");
+    @media screen and (max-width: 1199px) {
+      @include fonts(400, 14px, 0.02em);
+      margin-left: 39px;
+    }
+  }
+  &__item {
+    margin-top: 9px;
+  }
 }
-&__item{
-  margin-top: 9px;
-}
-}
-.join{
+.join {
   @extend %column;
   margin-left: 70px;
   padding-top: 12px;
+  @media screen and (max-width: 1199px) {
+    margin-left: 0;
+    padding: 0;
+  }
+  @media screen and (max-width: 767px) {
+    margin: 60px 137px 0;
+  }
 }
-.footer-links-list{
+.join__title {
+  color: getColor("color");
+  @include fonts(
+    700,
+    14px,
+    0.42px,
+    $text-transform: uppercase,
+    $text-align: left
+  );
+  margin-bottom: 20px;
+  @media screen and (max-width: 1199px) {
+    margin-top: 12px;
+    margin-left: 46px;
+  }
+}
+.footer-links-list {
   @extend %flex;
   width: 206px;
-  &__item{
-  @extend %center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-&__item:hover{
-  border-radius: 50%;
-  background-color: getColor('hover');
+  &__item {
+    @extend %center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  &__item:hover {
+    border-radius: 50%;
+    background-color: getColor("hover");
     transition: background-color 1s ease;
-}
-&__item:focus{
-  border-radius: 50%;
-  background-color: getColor('hover');
+  }
+  &__item:focus {
+    border-radius: 50%;
+    background-color: getColor("hover");
     transition: background-color 1s ease;
+  }
+  &__svg {
+    width: 20px;
+    height: 20px;
+    fill: getColor("background");
+  }
 }
-  &__svg{
-  width: 20px;
-  height: 20px;
-  fill: getColor('background');
-}
-}
-.telegram{
+.telegram {
   padding-top: 12px;
   width: 570px;
+  @media screen and (max-width: 1199px) {
+    width: 450px;
+    margin-left: 166px;
+  }
+  @media screen and (max-width: 767px) {
+    margin-left: 15px;
+  }
 }
-.footer-form{
+.footer-form {
   display: flex;
   align-items: flex-end;
   position: relative;
   left: 93px;
-  &__input{
-  width: 358px;
-  height: 50px;
-  border-radius: 4px;
-border: 1px solid rgba(255, 255, 255, 0.3);
-background: rgba(33, 150, 243, 0.00);
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-padding-left: 16px;
-outline: none;
-color: getColor('color');
-cursor: pointer;
-margin-top: 20px;
-margin-right: 12px;
+  @media screen and (max-width: 1199px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: static;
+  }
+  &__input {
+    width: 358px;
+    height: 50px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(33, 150, 243, 0);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    padding-left: 16px;
+    outline: none;
+    color: getColor("color");
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 12px;
+  }
+  &__label {
+    display: block;
+    @include fonts(
+      700,
+      14px,
+      0.42px,
+      $text-transform: uppercase,
+      $text-align: left
+    );
+    color: getColor("color");
+    @media screen and (max-width: 1199px) {
+      text-align: center;
+      margin-top: 60px;
+    }
+  }
+  &__icon {
+    width: 24px;
+    height: 24px;
+    fill: getColor("background");
+  }
+  &__btn {
+    @include fonts(700, $letter-spacing: 0.96px, $line-height: 30px);
+    width: 200px;
+    height: 50px;
+    border-radius: 4px;
+    background: getColor("hover");
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    border: none;
+    color: getColor("color");
+    position: absolute;
+    left: 370px;
+    animation: back 10s linear 500ms infinite;
+    @media screen and (max-width: 1199px) {
+      position: static;
+    }
+  }
 }
-&__label{
-    @include fonts(700, 14px, 0.42px, $text-transform:uppercase, $text-align:left);
-  color: getColor('color');
-}
-&__icon{
-  width: 24px;
-  height: 24px;
-  fill: getColor('background');
-}
-&__btn{
-    @include fonts(700, $letter-spacing:0.96px, $line-height:30px);
-  width: 200px;
-  height: 50px;
-  border-radius: 4px;
-background: getColor('hover');
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-border: none;
-color: getColor('color');
-position: absolute;
-left: 370px;
-animation: back 10s linear 500ms infinite;
-}
-}
-@keyframes back{
-  0%{
+@keyframes back {
+  0% {
     background-color: red;
   }
-  25%{
+  25% {
     background-color: green;
   }
-  50%{
+  50% {
     background-color: black;
   }
-  75%{
+  75% {
     background-color: purple;
   }
-  100%{
-    background-color: #2196F3;
+  100% {
+    background-color: #2196f3;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .address {
+    margin: 0 124px;
+    text-align: center;
   }
 }

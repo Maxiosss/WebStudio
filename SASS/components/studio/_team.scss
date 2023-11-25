@@ -1,6 +1,8 @@
 .team {
-  @extend %padding-94;
+  padding-top: 94px;
+  padding-bottom: 94px;
   background-color:  getColor('third-background');
+  width: 1600px;
   &__title {
     @include fonts(700, 36px, 0.03em);
   margin-bottom: 50px;
@@ -70,5 +72,53 @@
   border-radius: 50%;
   background-color:  getColor('hover');
     transition: background-color 500ms  linear;
+}
+}
+@media (max-width: 1199px){
+.team{
+  padding: 60px 0;
+  max-width: 768px;
+  &__title {
+    @include fonts(700, 28px, 0.03em);
+    margin-bottom: 30px;
+  }
+}
+.team-list{
+  display: flex;
+  flex-wrap: wrap;
+  width: 768px;
+  gap: 30px;
+  &__item{
+    width: 354px;
+  }
+  &__thumb{
+  width: 354px;
+  height: 374px;
+  margin-bottom: 30px;
+}
+}
+}
+@media (max-width: 767px){
+.team{
+  padding: 60px 15px;
+  max-width: 480px;
+  &__title {
+    @include fonts(700, 28px, 0.03em);
+    margin-bottom: 30px;
+  }
+}
+.team-list{
+  display: flex;
+  flex-wrap: wrap;
+  width: 480px;
+  gap: 30px;
+  &__item{
+    width: 450px;
+  }
+  &__thumb{
+  width: 450px;
+  height: 460px;
+  margin-bottom: 30px;
+}
 }
 }

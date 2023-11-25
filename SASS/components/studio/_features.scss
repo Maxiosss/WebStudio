@@ -1,37 +1,101 @@
-.features{
-  width: 1200px;
-  margin: 0 auto;
-  &-wrapper{
-  @extend %flex;
-  width: 1200px;
+.features {
+  width: 1600px;
+  padding-top: 94px;
+  padding-bottom: 94px;
+  @media screen and (max-width: 1199px) {
+    width: 768px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
-  &-wrapper-list:nth-child(n){
-  width: 270px;
-  border-radius: 4px;
-background:  getColor('third-background');
-}
-&-wrapper-list__svg{
-  width: 70px;
-  height: 70px;
-  margin: 25px 100px;
-}
-}
-.advantages{
-  @extend %padding-94;
+  @media screen and (max-width: 767px) {
+    width: 480px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 .features-list {
-  @extend %flex;
-  &__item{
-  width: 270px;
-}
-&__subtitle {
-  @include fonts(700, 14px, 0.03em, $text-transform:uppercase, $text-align:left);
-  margin-top: 30px;
-  margin-bottom: 10px;
-  color:  getColor('text');
-}
-&__paragraf {
-    @include fonts($font-size:14px, $letter-spacing:0.03em, $line-height:1.7, $text-align:left);
-  color:  getColor('svg');
-}
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  margin: 0 auto;
+  @media screen and (max-width: 1199px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 768px;
+  }
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+  }
+  &__item {
+    width: 270px;
+    &:nth-child(1) .features-list__subtitle::before {
+      background-image: url("../../../img/icons/antenna.png");
+    }
+    &:nth-child(2) .features-list__subtitle::before {
+      background-image: url("../../../img/icons/clock.png");
+    }
+    &:nth-child(3) .features-list__subtitle::before {
+      background-image: url("../../../img/icons/diagram.png");
+    }
+    &:nth-child(4) .features-list__subtitle::before {
+      background-image: url("../../../img/icons/astronaut.png");
+    }
+    @media screen and (max-width: 1199px) {
+      width: 354px;
+      margin-left: 15px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 450px;
+      margin-left: 15px;
+    }
+  }
+  &__svg {
+    width: 70px;
+    height: 70px;
+    margin: 25px 100px;
+    @media screen and (max-width: 1199px) {
+      margin: 25px 142px;
+    }
+    @media screen and (max-width: 767px) {
+      margin: 25px 190px;
+    }
+  }
+  &__subtitle {
+    @include fonts(
+      700,
+      14px,
+      0.03em,
+      $text-transform: uppercase,
+      $text-align: left
+    );
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: getColor("text");
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
+    &:nth-child(n)::before {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 120px;
+      border-radius: 4px;
+      background-color: getColor("third-background");
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-bottom: 30px;
+    }
+  }
+  &__paragraf {
+    @include fonts(
+      $font-size: 14px,
+      $letter-spacing: 0.03em,
+      $line-height: 1.7,
+      $text-align: left
+    );
+    color: getColor("svg");
+  }
 }

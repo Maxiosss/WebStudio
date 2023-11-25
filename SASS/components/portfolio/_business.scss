@@ -1,77 +1,118 @@
-.overlay:hover{
+.overlay:hover {
   @extend %thumb;
- background-color: rgba(33, 150, 243, 0.9);
- position: absolute;
-top: 0;
-cursor: pointer;
-transition: background-color 1s ease;
+  background-color: rgba(33, 150, 243, 0.9);
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  transition: background-color 1s ease;
 }
-.main-wrapper{
+.main-wrapper {
   width: 1200px;
   margin: 0 auto;
-  background-color:  getColor('background');
+  background-color: getColor("background");
+  padding: 94px 0;
+  @media screen and (max-width: 1199px) {
+    padding: 60px 15px;
+    width: 768px;
+  }
+    @media screen and (max-width: 767px) {
+    width: 480px;
+  }
 }
-.projects{
+.projects {
   width: 1200px;
+  @media screen and (max-width: 1199px) {
+    width: 768px;
+  }
+    @media screen and (max-width: 767px) {
+    width: 480px;
+  }
 }
-.projects li{
+.projects li {
   list-style-type: none;
 }
-.projects div{
+.projects div {
   box-sizing: border-box;
-background:  getColor('background');
-@include bordered(#EEEEEE);
+  background: getColor("background");
+  @include bordered(#eeeeee);
 }
-.works-list{
+.works-list {
   @extend %flex;
   flex-wrap: wrap;
-  margin: 56px auto 94px auto;
-  &__div{
-  margin-bottom: 30px;
-}
-&__div:hover .overlay{
-  cursor: pointer;
-  opacity: 1;
-}
-.overlay:hover &__text{
-  opacity: 1;
-}
-&__name{
-  font-weight: 700;
-font-size: 18px;
-line-height: 36px;
-letter-spacing: 0.06em;
-width: 322px;
-height: 36px;
-margin: 20px 24px 4px 24px;
-color:  getColor('text');
-}
-&__text{
-    @include fonts($line-height:1.55, $letter-spacing:0.54px, $font-size:18px, $text-align:left);
-  color:  getColor('color');
-font-family: getFont('basic');
-position: absolute;
-opacity: 0;
-top: 63px;
-bottom: 63px;
-left: 24px;
-right: 24px;
-}
-&__type{
-  @include fonts($line-height:30px, $letter-spacing:0.03em, $text-align:left);
-margin: 4px 24px 20px 24px;
-color: getColor('svg');
-}
-&__thumb{
-  position: relative;
-}
-&__thumb{
-  width: 370px;
-  height: 294px;
-}
-&__thumb > img{
-  @extend %thumb;
-  @extend %object;
+  margin: 48px auto 0 auto;
+  @media screen and (max-width: 1199px) {
+    margin-top: 30px;
+  }
+    @media screen and (max-width: 767px) {
+    margin-top: 40px;
+  }
+  &__div {
+    margin-bottom: 30px;
+  }
+  &__div--9 {
+    margin-bottom: 0;
+  }
+  &__div:hover .overlay {
+    cursor: pointer;
+    opacity: 1;
+  }
+  .overlay:hover &__text {
+    opacity: 1;
+  }
+  &__name {
+    @include fonts(700,18px,0.06em,36px, $text-align:left);
+    margin: 20px 24px 4px 24px;
+    color: getColor("text");
+  }
+  &__text {
+    @include fonts(
+      $line-height: 1.55,
+      $letter-spacing: 0.54px,
+      $font-size: 18px,
+      $text-align: left
+    );
+    color: getColor("color");
+    font-family: getFont("basic");
+    position: absolute;
+    opacity: 0;
+    top: 63px;
+    bottom: 63px;
+    left: 24px;
+    right: 24px;
+  }
+  &__type {
+    @include fonts(
+      $line-height: 30px,
+      $letter-spacing: 0.03em,
+      $text-align: left
+    );
+    margin: 4px 24px 20px 24px;
+    color: getColor("svg");
+  }
+  &__thumb {
+    position: relative;
+  }
+  &__thumb {
+    width: 370px;
+    height: 294px;
+    @media screen and (max-width: 1199px) {
+      width: 354px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 450px;
+    }
+  }
+  &__thumb > img {
+    @extend %thumb;
+    @extend %object;
     display: block;
+  }
 }
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .works-list__type--1 {
+    margin: 4px 24px 56px 24px;
+  }
+  .works-list__name--2{
+    width: 306px;
+  }
 }

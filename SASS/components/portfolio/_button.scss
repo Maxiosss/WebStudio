@@ -1,27 +1,30 @@
 .buttons-list {
-@extend %buttons;
-& button:hover{
-@extend %buttons-hover;
+  display: flex;
+  gap: 8px;
+  color: getColor("text");
+  margin-bottom: 48px;
+  justify-content: center;
+  @media screen and (max-width: 1199px) {
+    margin: 0 97px 0 97px;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  @media screen and (max-width: 767px) {
+    justify-content: left;
+  }
+  & button:hover {
+    @extend %buttons-hover;
+  }
+  & button:focus {
+    @extend %buttons-hover;
+  }
+  &__item {
+    @extend %button;
+    @include fonts(500, 16px, 0.48px, 1.62);
+  }
 }
-& button:focus{
-@extend %buttons-hover;
-}
-&__item {
-@extend %button;
-}
-&__item:nth-child(1){
-width: 73px;
-}
-&__item:nth-child(2){
-width: 125px;
-}
-&__item:nth-child(3){
-  width: 112px;
-}
-&__item:nth-child(4){
-  width: 103px;
-}
-&__item:nth-child(5){
-  width: 130px;
-}
+@media screen and (max-width: 767px) {
+  .buttons-list__item:nth-child(-n + 3) {
+    margin-bottom: 15px;
+  }
 }

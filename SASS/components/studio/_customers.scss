@@ -1,43 +1,76 @@
-.customers{
-@extend %padding-94;
-  &__title{
+.customers {
+  width: 1600px;
+  padding-top: 94px;
+  padding-bottom: 94px;
+  @media screen and (max-width: 1199px) {
+    padding: 60px 0;
+    width: 768px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 480px;
+  }
+  &__title {
     @include fonts(700, 36px);
-  color: getColor('text');
-margin-bottom: 50px;
+    color: getColor("text");
+    margin-bottom: 50px;
+    @media screen and (max-width: 1199px) {
+      @include fonts(700, 28px);
+      margin: 0 227px 30px;
+      width: 314px;
+    }
+    @media screen and (max-width: 1199px) {
+      margin: 0 auto  30px;
+    }
+  }
 }
-}
-.customers-list{
+.customers-list {
   @extend %flex;
-  margin-left: 215px;
   width: 1200px;
-  &__item{
-    @include bordered (getColor('border'));
-  @extend %center;
-  width: 170px;
-  height: 92px;
-  border-radius: 4px;
-}
-&__item:hover &__svg{
-  fill: getColor('hover');
-  transition: fill 500ms ease-in;
-}
-&__item:hover{
-  @include bordered(getColor('hover'));
+  margin: 0 auto;
+  @media screen and (max-width: 1199px) {
+    width: 768px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 480px;
+  }
+  &__item {
+    @include bordered(getColor("border"));
+    @extend %center;
+    width: 170px;
+    height: 92px;
+    border-radius: 4px;
+    @media screen and (max-width: 1199px) {
+      width: 226px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 210px;
+    }
+  }
+  &__item:hover &__svg {
+    fill: getColor("hover");
+    transition: fill 500ms ease-in;
+  }
+  &__item:hover {
+    @include bordered(getColor("hover"));
     transition: border 500ms ease-in;
-}
-&__item:focus &__svg{
-  fill: getColor('hover');
-  transition: fill 500ms ease-in;
-}
-&__item:focus{
-  @include bordered(getColor('hover'));
+  }
+  &__item:focus &__svg {
+    fill: getColor("hover");
+    transition: fill 500ms ease-in;
+  }
+  &__item:focus {
+    @include bordered(getColor("hover"));
     transition: border 500ms ease-in;
-}
-&__svg{
-  width: 106px;
-height: 60px;
-}
-&__svg{
-  fill: getColor('border-secondary');
-}
+  }
+  &__svg {
+    width: 106px;
+    height: 60px;
+  }
+  &__svg {
+    fill: getColor("border-secondary");
+  }
 }
