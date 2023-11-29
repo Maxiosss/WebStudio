@@ -1,3 +1,9 @@
+main .inner-container{
+  padding: 94px 0;
+  @media screen and (max-width: 1199px) {
+    padding: 60px 15px;
+  }
+}
 .overlay:hover {
   @extend %thumb;
   background-color: rgba(33, 150, 243, 0.9);
@@ -5,28 +11,6 @@
   top: 0;
   cursor: pointer;
   transition: background-color 1s ease;
-}
-.main-wrapper {
-  width: 1200px;
-  margin: 0 auto;
-  background-color: getColor("background");
-  padding: 94px 0;
-  @media screen and (max-width: 1199px) {
-    padding: 60px 15px;
-    width: 768px;
-  }
-    @media screen and (max-width: 767px) {
-    width: 480px;
-  }
-}
-.projects {
-  width: 1200px;
-  @media screen and (max-width: 1199px) {
-    width: 768px;
-  }
-    @media screen and (max-width: 767px) {
-    width: 480px;
-  }
 }
 .projects li {
   list-style-type: none;
@@ -113,6 +97,7 @@
     margin: 4px 24px 56px 24px;
   }
   .works-list__name--2{
-    width: 306px;
+    max-width: 306px;
+    width: 100%;
   }
 }

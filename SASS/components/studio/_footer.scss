@@ -1,44 +1,34 @@
 .footer {
   background-color: getColor("fourth-background");
-  padding: 60px 215px;
+  padding: 60px 0;
+}
+.footer .inner-container {
+  display: flex;
   @media screen and (max-width: 1199px) {
-    max-width: 768px;
-    display: flex;
     flex-wrap: wrap;
-    padding: 60px 0;
-  }
-  @media screen and (max-width: 767px) {
-    max-width: 480px;
+    justify-content: space-around;
+    align-items: baseline;
+    gap: 60px;
   }
 }
-.footer-wrapper {
-  display: flex;
-  width: 1200px;
-  margin: 0 auto;
+.address {
+  width: 232px;
+  margin-right: 70px;
   @media screen and (max-width: 1199px) {
-    width: 768px;
-    flex-wrap: wrap;
-  }
-  @media screen and (max-width: 767px) {
-    width: 480px;
-  }
-  &__left {
-    @extend %column;
-    width: 232px;
-  }
-  &__left a:hover {
-    color: getColor("hover");
-    transition: color 500ms ease-out;
-  }
-  &__left a:focus {
-    color: getColor("hover");
-    transition: color 500ms ease-out;
-  }
-  & a:focus {
-    color: getColor("hover");
-    transition: color 500ms ease-out;
+    text-align: center;
+    margin-right: 0;
   }
   &__street {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    @media screen and (max-width: 1199px) {
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+  &__city {
     @include fonts(
       $font-size: 14px,
       $letter-spacing: 0.03em,
@@ -46,9 +36,27 @@
       $text-align: left
     );
     margin-top: 20px;
-    margin-bottom: 9px;
     font-style: normal;
     color: getColor("background");
+    &:hover,
+    &:focus {
+      color: getColor("hover");
+      transition: color 500ms ease-out;
+    }
+  }
+  &__link {
+    &:hover,
+    &:focus {
+      color: getColor("hover");
+      transition: color 500ms ease-out;
+    }
+    @include fonts(500, 14px, 0.02em, $text-align: left);
+    text-decoration: none;
+    color: getColor("border");
+    font-style: normal;
+    @media screen and (max-width: 1199px) {
+      @include fonts(400, 14px, 0.02em);
+    }
   }
 }
 .logo__link {
@@ -56,37 +64,18 @@
   @include fonts(700, 26px, 0.03em, $text-align: left);
   color: getColor("background");
   @media screen and (max-width: 1199px) {
-    width: 154px;
     font-size: 24px;
-  }
-}
-.footer-contact-list {
-  @include fonts(500, 14px, 0.02em, $text-align: left);
-  &__link {
-    text-decoration: none;
-    color: getColor("border");
-    @media screen and (max-width: 1199px) {
-      @include fonts(400, 14px, 0.02em);
-      margin-left: 39px;
-    }
-  }
-  &__item {
-    margin-top: 9px;
   }
 }
 .join {
   @extend %column;
-  margin-left: 70px;
   padding-top: 12px;
   @media screen and (max-width: 1199px) {
-    margin-left: 0;
     padding: 0;
+    justify-content: center;
+    align-items: center;
   }
-  @media screen and (max-width: 767px) {
-    margin: 60px 137px 0;
-  }
-}
-.join__title {
+  &__title {
   color: getColor("color");
   @include fonts(
     700,
@@ -96,10 +85,7 @@
     $text-align: left
   );
   margin-bottom: 20px;
-  @media screen and (max-width: 1199px) {
-    margin-top: 12px;
-    margin-left: 46px;
-  }
+}
 }
 .footer-links-list {
   @extend %flex;
@@ -128,14 +114,11 @@
   }
 }
 .telegram {
+  max-width: 570px;
+  width: 100%;
   padding-top: 12px;
-  width: 570px;
   @media screen and (max-width: 1199px) {
-    width: 450px;
-    margin-left: 166px;
-  }
-  @media screen and (max-width: 767px) {
-    margin-left: 15px;
+    max-width: 450px;
   }
 }
 .footer-form {
@@ -150,7 +133,8 @@
     position: static;
   }
   &__input {
-    width: 358px;
+    max-width: 358px;
+    width: 100%;
     height: 50px;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -162,6 +146,12 @@
     cursor: pointer;
     margin-top: 20px;
     margin-right: 12px;
+    @media screen and (max-width:1199px) {
+      max-width: 450px;
+    }
+    @media screen and (max-width: 451px) {
+      max-width: 320px;
+    }
   }
   &__label {
     display: block;
@@ -175,7 +165,6 @@
     color: getColor("color");
     @media screen and (max-width: 1199px) {
       text-align: center;
-      margin-top: 60px;
     }
   }
   &__icon {
@@ -215,11 +204,5 @@
   }
   100% {
     background-color: #2196f3;
-  }
-}
-@media screen and (max-width: 1199px) {
-  .address {
-    margin: 0 124px;
-    text-align: center;
   }
 }

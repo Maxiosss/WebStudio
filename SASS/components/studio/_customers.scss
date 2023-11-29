@@ -1,41 +1,25 @@
 .customers {
-  width: 1600px;
   padding-top: 94px;
   padding-bottom: 94px;
   @media screen and (max-width: 1199px) {
     padding: 60px 0;
-    width: 768px;
-  }
-  @media screen and (max-width: 767px) {
-    width: 480px;
   }
   &__title {
-    @include fonts(700, 36px);
+    @include fonts(700, 36px, 1.08px);
     color: getColor("text");
     margin-bottom: 50px;
     @media screen and (max-width: 1199px) {
-      @include fonts(700, 28px);
-      margin: 0 227px 30px;
-      width: 314px;
-    }
-    @media screen and (max-width: 1199px) {
+      @include fonts(700, 28px, 0.84px);
       margin: 0 auto  30px;
     }
   }
 }
 .customers-list {
   @extend %flex;
-  width: 1200px;
   margin: 0 auto;
   @media screen and (max-width: 1199px) {
-    width: 768px;
-    display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     gap: 30px;
-  }
-  @media screen and (max-width: 767px) {
-    width: 480px;
   }
   &__item {
     @include bordered(getColor("border"));
@@ -44,10 +28,10 @@
     height: 92px;
     border-radius: 4px;
     @media screen and (max-width: 1199px) {
-      width: 226px;
+      width: calc((100% - 60px)/3);
     }
     @media screen and (max-width: 767px) {
-      width: 210px;
+      width: calc((100% - 30px)/2);
     }
   }
   &__item:hover &__svg {

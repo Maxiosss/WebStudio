@@ -1,124 +1,100 @@
 .team {
   padding-top: 94px;
   padding-bottom: 94px;
-  background-color:  getColor('third-background');
-  width: 1600px;
+  background-color: getColor("third-background");
+  @media screen and (nax-width: 1199px) {
+    padding: 60px 15px;
+  }
   &__title {
     @include fonts(700, 36px, 0.03em);
-  margin-bottom: 50px;
-  color:  getColor('text');
-}
+    margin-bottom: 50px;
+    color: getColor("text");
+    @media screen and (max-width: 1199px) {
+      margin-bottom: 30px;
+    }
+  }
 }
 .team-list {
   @extend %flex;
-  width: 1200px;
-  margin:0 auto;
+  margin: 0 auto;
+  @media screen and (max-width: 1199px) {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+  }
   &__text {
-    @include fonts($letter-spacing:0.03em, $line-height:1.19);
-  color:  getColor('svg');
-}
-&__name {
-  @include fonts(500, $letter-spacing:0.03em, $line-height:1.19);
-  margin-bottom: 10px;
-  color:  getColor('text');
-}
-&__item{
-  background-color:  getColor('color');
+    @include fonts($letter-spacing: 0.03em, $line-height: 1.19);
+    color: getColor("svg");
+  }
+  &__name {
+    @include fonts(500, $letter-spacing: 0.03em, $line-height: 1.19);
+    margin-bottom: 10px;
+    color: getColor("text");
+  }
+  &__item {
+    background-color: getColor("color");
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
-  width: 270px;
-  padding-bottom: 30px;
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    padding-bottom: 30px;
+    @media screen and (max-width: 1199px) {
+      padding-bottom: 24px;
+    }
+  }
+  &__thumb {
+    width: 270px;
+    height: 260px;
+    margin-bottom: 30px;
+    @media screen and (max-width: 1199px) {
+      width: 354px;
+      height: 374px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 450px;
+      height: 460px;
+    }
+    @media screen and (max-width: 480px) {
+      min-width: 290px;
+      max-width: 450px;
+      width: 100%;
+    }
+  }
+  &__thumb > img {
+    display: block;
+    @extend %thumb;
+    @extend %object;
+  }
 }
-&__thumb{
-  width: 270px;
-  height: 260px;
-  margin-bottom: 30px;
-}
-&__thumb > img{
-  display: block;
-  @extend %thumb;
-  @extend %object;
-}
-}
-.links-list{ 
+.links-list {
   @extend %flex;
   width: 206px;
   margin: 16px auto 0;
-  &__svg{
-  width: 20px;
-  height: 20px;
-  fill:  getColor('border-secondary');
-}
-&__item{
-  @extend %center;
-  width: 44px;
-  height: 44px;
-}
-&__item:hover &__svg{
-  fill:  getColor('background');
-  transition: fill 500ms linear;
-}
-&__item:focus &__svg{
-  fill:  getColor('background');
+  &__svg {
+    width: 20px;
+    height: 20px;
+    fill: getColor("border-secondary");
+  }
+  &__item {
+    @extend %center;
+    width: 44px;
+    height: 44px;
+  }
+  &__item:hover &__svg {
+    fill: getColor("background");
     transition: fill 500ms linear;
-}
-&__item:hover{
-  border-radius: 50%;
-  background-color:  getColor('hover');
-    transition: background-color 500ms  linear;
-}
-&__item:focus{
-  border-radius: 50%;
-  background-color:  getColor('hover');
-    transition: background-color 500ms  linear;
-}
-}
-@media (max-width: 1199px){
-.team{
-  padding: 60px 0;
-  max-width: 768px;
-  &__title {
-    @include fonts(700, 28px, 0.03em);
-    margin-bottom: 30px;
   }
-}
-.team-list{
-  display: flex;
-  flex-wrap: wrap;
-  width: 768px;
-  gap: 30px;
-  &__item{
-    width: 354px;
+  &__item:focus &__svg {
+    fill: getColor("background");
+    transition: fill 500ms linear;
   }
-  &__thumb{
-  width: 354px;
-  height: 374px;
-  margin-bottom: 30px;
-}
-}
-}
-@media (max-width: 767px){
-.team{
-  padding: 60px 15px;
-  max-width: 480px;
-  &__title {
-    @include fonts(700, 28px, 0.03em);
-    margin-bottom: 30px;
+  &__item:hover {
+    border-radius: 50%;
+    background-color: getColor("hover");
+    transition: background-color 500ms linear;
   }
-}
-.team-list{
-  display: flex;
-  flex-wrap: wrap;
-  width: 480px;
-  gap: 30px;
-  &__item{
-    width: 450px;
+  &__item:focus {
+    border-radius: 50%;
+    background-color: getColor("hover");
+    transition: background-color 500ms linear;
   }
-  &__thumb{
-  width: 450px;
-  height: 460px;
-  margin-bottom: 30px;
-}
-}
 }
