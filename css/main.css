@@ -1,10 +1,10 @@
 @charset "UTF-8";
-.team-list__thumb > img, .works-list__item > img, .backdrop {
+.team-list__thumb img, .works-list__item > img, .backdrop {
   width: 100%;
   height: 100%;
 }
 
-.team-list__thumb > img, .works-list__item > img {
+.team-list__thumb img, .works-list__item > img {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -399,6 +399,11 @@ button {
   background-color: rgba(33, 33, 33, 0.2);
 }
 
+@media screen and (min-width: 768px) {
+  .menu {
+    display: none;
+  }
+}
 .hero {
   width: 100%;
   padding-top: 200px;
@@ -483,6 +488,11 @@ button {
 
 .modal {
   position: fixed;
+  max-width: 528px;
+  width: 100%;
+  max-height: 581px;
+  height: 100%;
+  overflow: auto;
   padding: 40px;
   border-radius: 4px;
   z-index: 100;
@@ -505,11 +515,6 @@ button {
   color: #ffffff;
   border: none;
   margin: 30px auto 0;
-}
-@media screen and (max-width: 1199px) {
-  .modal__btn-submit {
-    margin: 30px auto 0;
-  }
 }
 .modal__text {
   font-size: 14px;
@@ -632,6 +637,8 @@ button {
   color: rgba(117, 117, 117, 0.5);
 }
 .modal-list__textarea {
+  max-height: 120px;
+  height: 100%;
   resize: none;
   margin-top: 4px;
   border-radius: 4px;
@@ -919,7 +926,7 @@ button {
     width: 100%;
   }
 }
-.team-list__thumb > img {
+.team-list__thumb img {
   display: block;
 }
 

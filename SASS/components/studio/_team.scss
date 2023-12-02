@@ -59,7 +59,7 @@
       width: 100%;
     }
   }
-  &__thumb > img {
+  &__thumb  img {
     display: block;
     @extend %thumb;
     @extend %object;

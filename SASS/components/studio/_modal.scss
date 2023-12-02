@@ -9,6 +9,11 @@
 }
 .modal {
   position: fixed;
+  max-width: 528px;
+  width: 100%;
+  max-height: 581px;
+  height: 100%;
+  overflow: auto;
   padding: 40px;
   border-radius: 4px;
   z-index: 100;
@@ -25,9 +30,6 @@
     color: getColor("background");
     border: none;
     margin: 30px auto 0;
-    @media screen and (max-width: 1199px) {
-      margin: 30px auto 0;
-    }
   }
   &__text {
     @include fonts($font-size: 14px, $line-height: 1.71);
@@ -116,6 +118,8 @@
     color: rgba(117, 117, 117, 0.5);
   }
   &__textarea {
+    max-height: 120px;
+    height: 100%;
     resize: none;
     margin-top: 4px;
     border-radius: 4px;
